@@ -1,12 +1,8 @@
 import { Router } from 'express';
+import { crearProducto, obtenerProductos } from '../controllers/productos.controllers';
 
 const router = Router();
 
-// app.get("/prueba", (_request, response) => {
-//   response.send("Solicitud get al backend");
-// });
-router.route('/productos').get((_request, response) => {
-  response.send('Solicitud get al backend');
-})
+router.route('/productos').get(obtenerProductos).post(crearProducto)
 
 export default router;
