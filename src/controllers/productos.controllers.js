@@ -7,7 +7,20 @@ export const obtenerProductos = async (_request, response) => {
   } catch (error) {
     console.log(error);
     response.status(404).json({
-      mensaje: "Error al bsucar los productos"
+      mensaje: "Error al buscar los productos"
+    });
+  }
+};
+
+export const obtenerProducto = async (request, response) => {
+  const { id } = request.params
+  try {
+    const producto = await Producto.findById(id);
+    response.status(200).json(producto);
+  } catch (error) {
+    console.log(error);
+    response.status(404).json({
+      mensaje: "Error al buscar el producto"
     });
   }
 };
@@ -44,12 +57,12 @@ export const borrarProducto = async (request, response) => {
 
 export const editarProducto = async (request, response) => {
   const { id } = request.params;
-  const { body } = request
+  const { body } = request;
   try {
-    await Producto.findByIdAndUpdate(id, body)
+    await Producto.findByIdAndUpdate(id, body);
     response.status(200).json({
-      mensaje: 'Producto editado correctamente'
-    })
+      mensaje: "Producto editado correctamente"
+    });
   } catch (error) {
     console.log(error);
     response.status(404).json({
