@@ -23,9 +23,8 @@ const usuarioSchema = new Schema({
   Estado: {
     Type: Boolean
   },
-  Perfil: {
-    Type: String,
-    Required: true
+  isAdmin: {
+    Type: Boolean
   }
 });
 
