@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import * as dotenv from 'dotenv';
 import './src/database/dbConnection'
 import productosRouter from './src/routes/productos.routes.js'
+import usuariosRouter from './src/routes/usuarios.routes.js'
 
 dotenv.config();
 const app = express();
@@ -23,3 +24,4 @@ app.use(morgan('dev'));
 //  rutas
 
 app.use('/apimenu', productosRouter)
+app.use('/apimenu', usuariosRouter)
