@@ -26,3 +26,18 @@ export const crearProducto = async (request, response) => {
     });
   }
 };
+
+export const borrarProducto = async (request, response) => {
+  const { id } = request.params;
+  try {
+    await Producto.findByIdAndDelete(id);
+    response.status(200).json({
+      mensaje: "Producto eliminado con exito"
+    });
+  } catch (error) {
+    console.log(error);
+    response.status(404).json({
+      mensaje: `Error al eliminar producto, verifica que el id enviado: ${id} sea correcto`
+    });
+  }
+};
