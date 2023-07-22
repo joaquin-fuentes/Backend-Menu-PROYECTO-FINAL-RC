@@ -20,11 +20,13 @@ const usuarioSchema = new Schema({
     maxLength: 200,
     required: true
   },
-  Estado: {
-    Type: Boolean
+  estado: {
+    type: Boolean,
+    required: true
   },
   isAdmin: {
-    Type: Boolean
+    type: Boolean,
+    required: true
   }
 });
 
