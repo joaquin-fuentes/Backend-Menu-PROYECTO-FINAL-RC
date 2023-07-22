@@ -30,7 +30,6 @@ const productoSchema = new Schema({
   },
   imagen: {
     type: String,
-    // match: /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|svg)$/,
     required: true
   }
 });
