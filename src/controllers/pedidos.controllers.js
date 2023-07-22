@@ -12,7 +12,7 @@ export const obtenerPedidos = async (_request, response) => {
   }
 };
 
-export const crearProducto = async (request, response) => {
+export const crearPedido = async (request, response) => {
   try {
     const pedidoNuevo = new Pedido(request.body);
     await pedidoNuevo.save();
