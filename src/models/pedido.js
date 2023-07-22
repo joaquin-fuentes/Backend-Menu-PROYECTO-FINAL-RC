@@ -15,6 +15,10 @@ const pedidoSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  subTotal: {
+    type: Number,
+    required: true
+  },
   nota: {
     type: String,
     minLength: 2,
