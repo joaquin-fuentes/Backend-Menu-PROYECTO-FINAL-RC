@@ -26,7 +26,7 @@ const pedidoSchema = new Schema({
   nota: {
     type: String,
     minLength: 2,
-    maxLength: 30
+    maxLength: 50
   }
 });
 
