@@ -51,7 +51,7 @@ export const login = async (request, response) => {
 
     if (!usuario) {
       return response.status(400).json({
-        mensaje: "Correo o password invalido - correo"
+        mensaje: "Correo o password invalido"
       });
     }
 
@@ -59,12 +59,12 @@ export const login = async (request, response) => {
 
     if (!passwordValido) {
       return response.status(400).json({
-        mensaje: "Correo o password invalido - password"
+        mensaje: "Correo o password invalido"
       });
     }
 
     response.status(200).json({
-      mensaje: "El usuario existe",
+      mensaje: "Logueado correctamente",
       uid: usuario._id,
       nombre: usuario.nombreUsuario
     });
