@@ -13,6 +13,19 @@ export const obtenerUsuarios = async (_request, response) => {
   }
 };
 
+export const obtenerUsuario = async (request, response) => {
+  const { id } = request.params
+  try {
+    const producto = await Usuario.findById(id);
+    response.status(200).json(producto);
+  } catch (error) {
+    console.log(error);
+    response.status(404).json({
+      mensaje: "Error al buscar el usuario"
+    });
+  }
+};
+
 export const crearUsuario = async (request, response) => {
   try {
     const { email, password } = request.body;
