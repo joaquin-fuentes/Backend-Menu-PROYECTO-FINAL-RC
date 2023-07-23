@@ -27,7 +27,7 @@ const validarProducto = [
   check("detalle")
     .notEmpty()
     .withMessage("El detalle del producto es un dato obligatorio")
-    .matches(/^(?=.*[A-Z])[A-Za-z0-9:,.\s]{7,199}$/)
+    .matches(/^(?=.*[A-Z])[A-Za-zÁÉÍÓÚáéíóúÑñ0-9:,.\s]{7,199}$/)
     .withMessage("El detalle del producto debe comenzar con mayúscula y debe contener como mínimo 8 carácteres y como máximo 150 carácteres (puede usar letras, números y signos de puntuación)")
     .isLength({ min: 8, max: 150 })
     .withMessage(
