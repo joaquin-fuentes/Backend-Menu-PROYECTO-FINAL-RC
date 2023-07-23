@@ -43,8 +43,8 @@ const validarProducto = [
     .withMessage("La imagen es un dato obligatorio")
     .matches(/^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|svg|webp)$/)
     .withMessage("La imagen debe tener el formato adecuado (jpg, jpeg, png, svg o webp)"),
-  (req, res, next) => {
-    resultadoValidacion(req, res, next);
+  (request, response, next) => {
+    resultadoValidacion(request, response, next);
   }
 ];
 
