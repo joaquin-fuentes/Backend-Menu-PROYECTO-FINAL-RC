@@ -1,15 +1,19 @@
 import { check } from "express-validator";
 import resultadoValidacion from "./resultadoValidacion";
 import Usuario from "../models/usuario";
-
 const validarPedido = [
   check("usuario")
     .notEmpty()
     .withMessage("El id del usuario es obligatorio")
-    .custom((value) => {
-      return Usuario.findById(value);
-    })
-    .withMessage("No se encontro este usuario"),
+    .isMongoId()
+    .withMessage("Id no valido")
+    .custom(async (value) => {
+      const result = await Usuario.findById(value)
+      if (result !== null) {
+        return true
+      }
+      throw new Error("No se encontro este usuario")
+    }),
   check("productos")
     .notEmpty()
     .withMessage("Los productos son obligatorios en el pedido")
