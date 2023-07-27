@@ -79,7 +79,9 @@ export const login = async (request, response) => {
     response.status(200).json({
       mensaje: "Logueado correctamente",
       uid: usuario._id,
-      nombre: usuario.nombreUsuario
+      nombre: usuario.nombreUsuario,
+      estado: usuario.estado,
+      isAdmin: usuario.isAdmin
     });
   } catch (error) {
     console.log(error);

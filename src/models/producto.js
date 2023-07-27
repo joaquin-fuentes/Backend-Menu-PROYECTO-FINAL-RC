@@ -9,7 +9,7 @@ const productoSchema = new Schema({
     required: true
   },
   estado: {
-    type: String,
+    type: Boolean,
     required: true
   },
   precio: {
