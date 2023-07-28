@@ -57,6 +57,22 @@ export const crearUsuario = async (request, response) => {
   }
 };
 
+export const editarUsuario = async (request, response) => {
+  const { id } = request.params;
+  const { body } = request;
+  try {
+    await Usuario.findByIdAndUpdate(id, body);
+    response.status(200).json({
+      mensaje: "Usuario Editado correctamente"
+    });
+  } catch (error) {
+    console.log(error);
+    response.status(404).json({
+      mensaje: `Error al editar el Usuario`
+    });
+  }
+};
+
 export const login = async (request, response) => {
   try {
     const { email, password } = request.body;

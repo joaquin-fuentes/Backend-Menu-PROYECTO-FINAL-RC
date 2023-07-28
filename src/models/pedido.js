@@ -6,7 +6,7 @@ const pedidoSchema = new Schema({
     ref: "Usuario",
     required: true
   },
-  productos: [{
+  productosdelMenu: [{
     type: Schema.Types.ObjectId,
     ref: "Producto",
     required: true

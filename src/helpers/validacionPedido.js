@@ -9,12 +9,13 @@ const validarPedido = [
     .withMessage("Id no valido")
     .custom(async (value) => {
       const result = await Usuario.findById(value)
+      console.log(Usuario)
       if (result !== null) {
         return true
       }
       throw new Error("No se encontro este usuario")
     }),
-  check("productos")
+  check("productosdelMenu")
     .notEmpty()
     .withMessage("Los productos son obligatorios en el pedido")
     .isArray()
