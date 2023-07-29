@@ -6,14 +6,13 @@ const pedidoSchema = new Schema({
     ref: "Usuario",
     required: true
   },
-  productosdelMenu: [{
+  productosDelMenu: [{
     type: Schema.Types.ObjectId,
     ref: "Producto",
     required: true
   }],
   fecha: {
     type: Date,
-    default: Date.now,
     required: true
   },
   estado: {
@@ -26,7 +25,7 @@ const pedidoSchema = new Schema({
   },
   nota: {
     type: String,
-    minLength: 2,
+    minLength: 0,
     maxLength: 50
   }
 });

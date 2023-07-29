@@ -15,7 +15,7 @@ const validarPedido = [
       }
       throw new Error("No se encontro este usuario")
     }),
-  check("productosdelMenu")
+  check("productosDelMenu")
     .notEmpty()
     .withMessage("Los productos son obligatorios en el pedido")
     .isArray()
@@ -23,8 +23,6 @@ const validarPedido = [
   check("fecha")
     .notEmpty()
     .withMessage("La fecha es obligatoria")
-    .isDate()
-    .withMessage("Ingresa una fecha valida")
     .isLength({ min: 1, max: 50 })
     .withMessage("Demasiados carateres"),
   check("estado")
@@ -40,7 +38,7 @@ const validarPedido = [
   check("nota")
     .isString()
     .withMessage("La nota debe ser un string")
-    .isLength({ min: 2, max: 50 })
+    .isLength({ min: 0, max: 50 })
     .withMessage("La nota puede tener como maximo 50 caracteres"),
   (request, response, next) => {
     resultadoValidacion(request, response, next);
