@@ -6,6 +6,7 @@ import './src/database/dbConnection'
 import productosRouter from './src/routes/productos.routes.js'
 import usuariosRouter from './src/routes/usuarios.routes.js'
 import pedidosRouter from './src/routes/pedidos.routes.js'
+import path from 'path';
 
 dotenv.config();
 const app = express();
@@ -21,6 +22,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // permite recibir strings y arrays en el request
 app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, '/public')))
 
 //  rutas
 
