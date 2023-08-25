@@ -20,12 +20,12 @@ El alcance de este proyecto se centra en realizar todos los pasos del CRUD y deb
 - Express
 - MongoDB
 - Mongoose
-- Fronted: https://github.com/MauroDiazSantilli/ProyectoFinal-Grupo3
+- Fronted: https://github.com/joaquin-fuentes/ProyectoFinal-Grupo3
 
 
 ## Para clonar el repositorio 💻
 
-git clone https://github.com/Fedreric/Backend-Menu-PROYECTO-FINAL-RC.git
+git clone https://github.com/joaquin-fuentes/Backend-Menu-PROYECTO-FINAL-RC.git
 
 - npm install
 - npm run dev
@@ -38,3 +38,4 @@ Link de vercel :https://backend-menu-proyecto-final-rc.vercel.app/
 
 ### Colaborador
 + Julian Martin [GitHub](https://github.com/Juliancito1)
++ Joaquin Fuentes [GitHub](https://github.com/joaquin-fuentes)
