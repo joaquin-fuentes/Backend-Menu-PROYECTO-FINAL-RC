@@ -6,7 +6,6 @@ export const obtenerUsuarios = async (_request, response) => {
     const usuarios = await Usuario.find()
     response.status(200).json(usuarios)
   } catch (error) {
-    console.log(error);
     response.status(404).json({
       mensaje: "Error al buscar los usuarios"
     });
@@ -19,7 +18,6 @@ export const obtenerUsuario = async (request, response) => {
     const producto = await Usuario.findById(id);
     response.status(200).json(producto);
   } catch (error) {
-    console.log(error);
     response.status(404).json({
       mensaje: "Error al buscar el usuario"
     });
@@ -50,7 +48,6 @@ export const crearUsuario = async (request, response) => {
       uid: usuario._id
     });
   } catch (error) {
-    console.log(error);
     response.status(400).json({
       mensaje: "El usuario no pudo ser creado"
     });
@@ -66,7 +63,6 @@ export const editarUsuario = async (request, response) => {
       mensaje: "Usuario Editado correctamente"
     });
   } catch (error) {
-    console.log(error);
     response.status(404).json({
       mensaje: `Error al editar el Usuario`
     });
@@ -100,7 +96,6 @@ export const login = async (request, response) => {
       isAdmin: usuario.isAdmin
     });
   } catch (error) {
-    console.log(error);
     response.status(400).json({
       mensaje: "usuario o contraseña invalido"
     });
