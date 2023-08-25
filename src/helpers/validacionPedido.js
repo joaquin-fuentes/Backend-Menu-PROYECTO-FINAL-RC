@@ -9,7 +9,6 @@ const validarPedido = [
     .withMessage("Id no valido")
     .custom(async (value) => {
       const result = await Usuario.findById(value)
-      console.log(Usuario)
       if (result !== null) {
         return true
       }
